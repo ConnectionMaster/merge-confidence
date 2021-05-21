@@ -22,8 +22,8 @@ Merge Confidence is currently available in the form of Pull Request badges.
 The badges available are:
 
 - **Age**: How old the release is
-- **Adoption**: The percentage of Renovate's user base which is using this library
-- **Passing**: The percentage of updates which had successful test results
+- **Adoption**: The percentage of this library's users (within Renovate) which are using this release
+- **Passing**: The percentage of updates which had successful test results for this update
 - **Confidence**: The confidence level for this update
 
 ## How Does It Work?
@@ -40,14 +40,14 @@ We plan to expose much more of the _data_ via a companion website, such as numbe
 
 Merge Confidence badges for Pull Requests are available in beta on any supported Renovate platform today, including WhiteSource Remediate.
 
-Data is available for npm packages only for now, we plan to support other languages soon.
+Data is available for npm, Maven and PyPI packages only for now, we plan to support other languages soon.
 
 High-level information on planned enhancements is available in the [Merge Confidence Roadmap Project](https://github.com/whitesource/merge-confidence/projects/1) on GitHub.
 
 ## Enabling and Disabling
 
 Merge Confidence badges are enabled automatically for anyone using the WhiteSource Renovate App.
-For Renovate users of other types, you can enable Merge Confidence badges by adding this to your Renovate config:
+If you don't use the app, you can enable Merge Confidence badges by adding this to your Renovate config:
 ```json
 "extends": ["github>whitesource/merge-confidence:beta"]
 ```
