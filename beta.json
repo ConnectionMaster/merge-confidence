@@ -1,13 +1,13 @@
 {
   "prBodyDefinitions": {
-    "Age": "[![age](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}/age-slim)](https://docs.renovatebot.com/merge-confidence/)",
-    "Adoption": "[![adoption](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}/adoption-slim)](https://docs.renovatebot.com/merge-confidence/)",
-    "Passing": "[![passing](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}/compatibility-slim/{{{currentVersion}}})](https://docs.renovatebot.com/merge-confidence/)",
-    "Confidence": "[![confidence](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}/confidence-slim/{{{currentVersion}}})](https://docs.renovatebot.com/merge-confidence/)"
-  },
+    "Age": "{{#if newVersion}}[![age](https://developer.mend.io/api/mc/badges/age/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/){{/if}}",
+    "Adoption": "{{#if newVersion}}[![adoption](https://developer.mend.io/api/mc/badges/adoption/{{datasource}}/{{replace '/' '%2f' depName}}/{{{newVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/){{/if}}",
+    "Passing": "{{#if newVersion}}[![passing](https://developer.mend.io/api/mc/badges/compatibility/{{datasource}}/{{replace '/' '%2f' depName}}/{{{currentVersion}}}/{{{newVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/){{/if}}",
+    "Confidence": "{{#if newVersion}}[![confidence](https://developer.mend.io/api/mc/badges/confidence/{{datasource}}/{{replace '/' '%2f' depName}}/{{{currentVersion}}}/{{{newVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/){{/if}}"
+    },
   "packageRules": [
     {
-      "datasources": ["maven", "npm", "pypi", "nuget", "rubygems", "packagist"],
+      "datasources": ["go", "maven", "npm", "pypi", "nuget", "rubygems", "packagist"],
       "updateTypes": ["patch", "minor", "major"],
       "prBodyColumns": ["Package", "Change", "Age", "Adoption", "Passing", "Confidence"]
     }
